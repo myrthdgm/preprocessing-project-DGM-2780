@@ -57,6 +57,151 @@ html {
 }
 
 /* Start your code here: */
+/*https://spaviadayspa.com/*/
 
+body {
+	@themeColor: brown;
+	@themeFont: "Lucida Conole", Monaco, monospace;
 
+	font-family: @themeFont;
+	margin: 10px;
+	background-color: burlywood;
 
+	h1 {
+		font-size: 50pt;
+		text-shadow: 2pt 0pt 0 @themeColor;
+		padding-bottom: 20pt;
+	}
+	
+	.navBar {
+		display: flex;
+		justify-content: space-around;
+		padding-bottom: 10pt;
+		a {
+			color: @themeColor;
+			font-size: 20pt;
+		}
+	}
+	
+	.logoMain {
+		padding: 20pt;
+		position: relative;
+		text-align: center;
+		img {
+			@media (max-width: 500px){display: none;}
+		}
+		.overPic {
+			@media (min-width:500px) {
+			position: absolute;
+			top: 50%;
+			left: 50%;
+			transform: translate(-50%, -50%);
+			}
+			font-size:30pt;
+			@media (max-width: 1000px){font-size: 20pt;}
+			background-color: black;
+			padding:5pt;
+			opacity: .5;
+			color: white;
+		}
+	}
+	
+	.stampIt(@setColor, @darken)
+	{
+		text-align: center;
+		padding: 20px;
+		font-size: 15pt;
+		border-radius: 50%;
+		background-color: @setColor;
+		border-style: solid;	
+		border-color:@darken;
+		margin: 10pt;
+		@media (min-width: 800px) {
+			width: 30%;
+		}
+		@media (max-width:800px) {
+			width: 45%;
+		}
+		@media (max-width: 500px) {
+			width: 80%;
+		}
+	}
+
+	.flexBtn {
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: space-around;
+		#btn1 {
+			.stampIt(plum, purple);
+		}
+		
+		#btn2 {
+			.stampIt(lemonchiffon, yellow);
+		}
+		
+		#btn3 {
+			.stampIt(lightgreen, green);
+		}
+		
+		#btn4 {
+			.stampIt(skyblue, blue);
+		}
+		
+		#btn5 {
+			.stampIt(pink, hotpink);
+		}
+		
+		#btn6 {
+			.stampIt(khaki, orange);
+		}
+	}
+
+	.box {
+		display: flex;
+		justify-content: space-around;
+		margin: 20pt;
+		padding: 10pt;
+		background-color: @themeColor;
+		display: flex;
+		.text {
+			@media (min-width: 900px) {
+				margin-top: 50pt;
+			}
+			text-align: center;
+			h2 {
+				font-size: 30pt;
+			}
+			button {
+				margin-top: 12pt;
+			}
+		}
+		img {
+			@media (max-width: 900px) {
+				display:none;
+			}
+		}
+
+	}
+
+	.fancyIt(@borderStyle) {
+		border: @borderStyle @themeColor;
+		margin-bottom: 12pt;
+		padding: 10pt;
+	}
+
+	.specialColumns {
+		margin-bottom: 12pt;
+		h2 {
+			font-size: 20pt;
+		}
+		#column1{
+			.fancyIt(dashed);
+		}
+		#column2{
+			.fancyIt(dotted);
+		}
+		#column3 {
+			.fancyIt(double);
+		}
+	}
+}
